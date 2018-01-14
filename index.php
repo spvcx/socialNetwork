@@ -11,6 +11,26 @@ switch($action) {
     case 'register':
         register();
         break;
+    case 'logout':
+        logout();
+        break;
+    default:
+        defaultpage();
+        break;
+}
+
+function logout() {
+    DB::query("DELETE FROM cookie_token WHERE token=:token",array(':token'=>sha1($_COOKIE['CID'])));
+    setcookie('CID',null,-1,'/');
+    header('Location: /');
+}
+
+
+function defaultpage() {
+    global $userId;
+    $results = array();
+    $results['pageTitle'] = 'YGKSCNet';
+    require(TEMPLATE_PATH."/default.php");
 }
 
 function login() {

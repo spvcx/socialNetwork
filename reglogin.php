@@ -9,7 +9,11 @@ if(isset($_POST['createaccount'])) {
 }
 
 if(isset($_POST['login'])) {
-    User::loginUser($_POST['email'],$_POST['password']);
+    //User::loginUser($_POST['email'],$_POST['password']);
+    $u = new User();
+    $u->storeValues($_POST);
+    $u->loginUser();
 }
+
 
 ?>

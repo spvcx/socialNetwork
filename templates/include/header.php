@@ -25,7 +25,7 @@
               <a class="nav-link" href="#">Редактировать аккаунт</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Выйти</a>
+              <a class="nav-link" href="http://spvcx.com/?action=logout">Выйти</a>
             </li>
           </ul>
         </div>
