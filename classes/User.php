@@ -6,7 +6,7 @@ class User {
         if(isset($_COOKIE['CID'])) {
 
         } else {
-            return false;
+            return 0;
         }
 
     }
