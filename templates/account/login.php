@@ -7,12 +7,12 @@
           <div class="card text-white p-5 bg-dark">
             <div class="card-body">
               <h1 class="mb-4">Вход</h1>
-              <form action="login.php" method="post">
+              <form action="reglogin.php" method="post">
                 <div class="form-group"> <label>Email</label>
                   <input type="email" name="email" class="form-control" placeholder="Введите email"> </div>
                 <div class="form-group"> <label>Пароль</label>
                   <input type="password" name="password" class="form-control" placeholder="Введите пароль"> </div>
-                <button type="submit" class="btn btn-success">Войти</button><button class="btn btn-primary left-margin"><a href="http://spvcx.com/?action=register">Создать аккаунт</a></button>
+                <button type="submit" name='login' class="btn btn-success">Войти</button><button class="btn btn-primary left-margin"><a href="http://spvcx.com/?action=register">Создать аккаунт</a></button>
               </form>
             </div>
           </div>
