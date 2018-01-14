@@ -3,9 +3,9 @@ class DB {
 
     public static function connect() {
 
-        $PDO = new PDO(DB_N,DB_USERNAME,DB_PASSWORD);
-        $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $PDO;
+        $pdo = new PDO('mysql:host=localhost;dbname=socialNetwork;charset=utf8', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $pdo;
 
     }
 
