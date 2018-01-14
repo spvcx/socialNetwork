@@ -1,0 +1,12 @@
+<?php
+ini_set("display_errors",true);
+define("DB_N","mysql:host=localhost,dbname=socialNetwork");
+define("DB_USERNAME",'root');
+define('DB_PASSWORD','');
+define('CLASS_PATH','classes');
+define('TEMPLATE_PATH','templates');
+define('ADMIN_USERNAME','root');
+define('ADMIN_PASSWORD','');
+require(CLASS_PATH."/DataBase.php");
+require(CLASS_PATH."/User.php");
+?>
