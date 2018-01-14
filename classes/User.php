@@ -64,12 +64,12 @@ class User {
         if(DB::query('SELECT  email FROM user WHERE email=:email',array(':email'=>$this->email))) {
             if (password_verify($this->password, DB::query('SELECT password FROM user WHERE email=:email', array(':email'=>$this->email))[0]['password']))  {
                 $this->setCID();
-                header('Location: /');
+                echo 'success';
             } else {
-                echo 'Неправильный пароль';
+                echo 'password';
             }    
         } else {
-            echo "Пользователя с таким email не существует";
+            print 'email';
         }
 
     }
