@@ -33,7 +33,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Аккаунт <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Моя страница</a></li>
-            <li><a href="#">Редактировать</a></li>
+            <li><a href="http://spvcx.com/?action=edit">Редактировать</a></li>
             <li><a href="#">Настройки</a></li>
             <li class="divider"></li>
             <li><a href="http://spvcx.com/?action=logout">Выйти</a></li>
@@ -56,7 +56,7 @@
             <div class style="width:200px; padding: 8px 0px;">
                 <ul class="nav nav-list">
                     <li><a href="#"> <span class="glyphicon glyphicon-home" style="margin-right:10px;"></span>Моя Страница</a></li>
-                    <li><a href="#"> <span class="glyphicon glyphicon-folder-open" style="margin-right:10px;"></span>Новости</a></li>      
+                    <li><a href="/"> <span class="glyphicon glyphicon-folder-open" style="margin-right:10px;"></span>Новости</a></li>      
                     <li><a href="#"> <span class="glyphicon glyphicon-envelope" style="margin-right:10px;"></span>Мои Сообщения <span class="badge badge-info">4</span></a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right:10px;"></span>Мои друзья </a></li>
                     <li ><a href="#"> <span class="glyphicon glyphicon-search" style="margin-right:10px;"></span>Поиск</a></li>
@@ -66,7 +66,7 @@
         </div>
 
   <?php endif?>
-        <div class="col-lg-8" style="padding-top:10px;">
+        <div class="col-lg-8" style="padding-top:0px;">
         
 	
 

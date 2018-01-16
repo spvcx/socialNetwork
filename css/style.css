@@ -33,3 +33,7 @@ body {
 .margin-top {
     margin-top: 10px;
 }
+
+.inputw {
+    width: 400px !important;
+}

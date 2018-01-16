@@ -14,9 +14,19 @@ switch($action) {
     case 'logout':
         logout();
         break;
+    case 'edit':
+        edit();
+        break;
     default:
         defaultpage();
         break;
+}
+
+function edit() {
+    global $userId;
+    $results = array();
+    $results['pageTitle'] = 'Редактирование моей страницы';
+    require(TEMPLATE_PATH."/edit.php");
 }
 
 function logout() {
