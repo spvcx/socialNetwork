@@ -11,5 +11,17 @@ button a {
 }
 
 .left-margin {
-    margin-left: 155px;
+    margin-left: 15px;
+}
+
+.menu {
+    background-color: #0277BD;
+}
+
+.menu a {
+    color: rgb(66, 66, 66);
+}
+
+.right-margin {
+    margin-left: 15px;
 }
