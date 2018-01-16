@@ -25,3 +25,11 @@ button a {
 .right-margin {
     margin-left: 15px;
 }
+
+body {
+    background-color: rgb(246, 247, 250);
+}
+
+.margin-top {
+    margin-top: 10px;
+}

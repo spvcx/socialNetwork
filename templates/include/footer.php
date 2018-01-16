@@ -1,5 +1,7 @@
-</div><!-- end on the header.php container block -->
 
+</div>
+</div>
+</div>
 </body>
 
 </html>
