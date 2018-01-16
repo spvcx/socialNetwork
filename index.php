@@ -14,19 +14,39 @@ switch($action) {
     case 'logout':
         logout();
         break;
-    case 'edit':
-        edit();
+    case 'editmain':
+        editmain();
+        break;
+    case 'editstudy':
+        editstudy();
+        break;
+    case 'editinterests':
+        editinterests();
         break;
     default:
         defaultpage();
         break;
 }
 
-function edit() {
+function editmain() {
     global $userId;
     $results = array();
     $results['pageTitle'] = 'Редактирование моей страницы';
     require(TEMPLATE_PATH."/edit.php");
+}
+
+function editstudy() {
+    global $userId;
+    $results = array();
+    $results['pageTitle'] = 'Редактирование моей страницы';
+    require(TEMPLATE_PATH."/editstudy.php");
+}
+
+function editinterests() {
+    global $userId;
+    $results = array();
+    $results['pageTitle'] = 'Редактирование моей страницы';
+    require(TEMPLATE_PATH."/editinterests.php");
 }
 
 function logout() {

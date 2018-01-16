@@ -33,7 +33,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Аккаунт <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Моя страница</a></li>
-            <li><a href="http://spvcx.com/?action=edit">Редактировать</a></li>
+            <li><a href="http://spvcx.com/?action=editmain">Редактировать</a></li>
             <li><a href="#">Настройки</a></li>
             <li class="divider"></li>
             <li><a href="http://spvcx.com/?action=logout">Выйти</a></li>

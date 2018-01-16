@@ -37,3 +37,17 @@ body {
 .inputw {
     width: 400px !important;
 }
+
+.lowselects {
+    width: 120px !important;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.selectblock {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 400px;
+}
