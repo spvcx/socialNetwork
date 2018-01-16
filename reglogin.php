@@ -5,7 +5,7 @@ if(isset($_POST['createaccount'])) {
     $u = new User();
     $u->storeValues($_POST);
     $u->registerUser();
-    header('Location: /');
+    
 }
 
 if(isset($_POST['login'])) {
@@ -15,5 +15,12 @@ if(isset($_POST['login'])) {
     $u->loginUser();
 }
 
+if(isset($_POST['ajax'])) {
+    // ajax email check
+    $e = $_POST['email'];
+    if(DB::query("SELECT email FROM user WHERE email=:email",array(':email'=>$e))) {
+        echo '1';
+    }
+}
 
 ?>
