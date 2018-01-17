@@ -12,6 +12,7 @@ function ajaxLogin() {
             data: { login: 'login', email: email, password: password }
         }).done(function(data) {
             ndata = data.slice(1, data.length);
+            console.log(ndata);
             switch (ndata) {
                 case 'success':
                     location.href = 'http://spvcx.com';

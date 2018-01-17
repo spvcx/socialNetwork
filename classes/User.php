@@ -42,6 +42,11 @@ class User {
         DB::query('INSERT INTO user VALUES(\'\',:email,:password)',array(':email'=>$this->email,
         ':password'=>password_hash($this->password,PASSWORD_BCRYPT)));
         $this->setCID();
+        /*
+        DB::query('INSERT INTO user VALUES(\'\',:email,:password)',array(':email'=>$this->email,
+        ':password'=>$this->password));
+        
+        */
         
         $userId = DB::query('SELECT id FROM user WHERE email=:email',array(':email'=>$this->email))[0]['id'];
         DB::query('INSERT INTO user_info VALUES(\'\',:user_id,:firstname,:lastname,:gender,:relations,:city,:about,:interests,:music,:tvshow,:books,:games)',array(':user_id'=>$userId,':firstname'=>$this->firstname,':lastname'=>$this->lastname,
@@ -52,7 +57,7 @@ class User {
     }
    
     public  function loginUser() {
-
+        
         if(DB::query('SELECT  email FROM user WHERE email=:email',array(':email'=>$this->email))) {
             if (password_verify($this->password, DB::query('SELECT password FROM user WHERE email=:email', array(':email'=>$this->email))[0]['password']))  {
                 $this->setCID();
@@ -63,7 +68,18 @@ class User {
         } else {
             print 'email';
         }
-
+        
+        /*
+        if(DB::query('SELECT  email FROM user WHERE email=:email',array(':email'=>$this->email))) {
+            if ($this->password == DB::query('SELECT password FROM user WHERE email=:email', array(':email'=>$this->email))[0]['password'])  {
+                $this->setCID();
+                echo 'success';
+            } else {
+                echo 'password';
+            }    
+        } else {
+            print 'email';
+        }*/
     }
 
     public function setCID() {
@@ -71,7 +87,7 @@ class User {
         $c = True;
         $token = $token = bin2hex(openssl_random_pseudo_bytes(64, $c));
         $userId = DB::query('SELECT id FROM user WHERE email=:email',array(':email'=>$this->email))[0]['id'];
-        echo "email from cookie:".$this->email;
+        
         DB::query('INSERT INTO cookie_token VALUES(\'\',:user_id,:token)',array(':user_id'=>$userId,':token'=>sha1($token)));
         setcookie("CID", $token, time() + 60 * 60 * 24 * 7, '/', NULL, NULL, TRUE);
 
