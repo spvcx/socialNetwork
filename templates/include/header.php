@@ -7,8 +7,8 @@
     <!--<script src="js/bootstrap.min.js"></script>-->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <!--<script src="js/notifies.js"></script>-->
     <script src="js/Account/registerLogin.js"></script>
+    <script src="js/Account/editData.js"></script>
     
     <!--<link rel="stylesheet" type="text/css" href="css/bootstrap3.min.css" />-->
     <!--

@@ -14,8 +14,8 @@
             $userInfo = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0];
             ?>
         
-        <form method="post" id="form" onsubmit="return false;" role="form" class="form-horizontal">
-                <div class="form-group has-feedback" id="firstname">
+        <form method="post"  onsubmit="return false;" role="form" class="form-horizontal">
+                <div class="form-group has-feedback" >
                   <label for="firstame"  class="control-label col-xs-3">Имя</label>
                   <div class="col-xs-6">
                     <div class="input-group">    
@@ -24,8 +24,8 @@
                   </div>
                 </div>
 
-
-              <div class="form-group has-feedback " id="lastname">
+            <?php echo "<input type='hidden' id='memValue' value='".$userInfo['user_id']."'>"; ?>
+              <div class="form-group has-feedback " >
                 <label for="lastname" class="control-label col-xs-3">Фамилия</label>
                 <div class="col-xs-6">
                   <div class="input-group">
@@ -35,14 +35,14 @@
               </div>
 
 
-              <div class="form-group has-feedback " id="relations">
+              <div class="form-group has-feedback " >
                 <label for="relations" class="control-label col-xs-3">Семейное положение</label>
                 <div class="col-xs-6">
                   <div class="input-group">
                     <select id="relations" class="form-control inputw">
                         <option selected><?php echo $userInfo['relations']?></option>
 
-                        <?php if($userInfoMain['gender']=== 'Мужской'): ?>
+                        <?php if($userInfo['gender']=== 'Мужской'): ?>
 
                           <option>Не женат</option>
                           <option>Женат</option>
@@ -68,7 +68,7 @@
 
               
 
-              <div class="form-group has-feedback " id="city">
+              <div class="form-group has-feedback " >
                 <label for="city" class="control-label col-xs-3">Город</label>
                 <div class="col-xs-6">
                   <div class="input-group">
@@ -83,37 +83,10 @@
 
               
 
-              <div class="form-group has-feedback " id="dateborn">
-                <label for="dateborn" class="control-label col-xs-3">Дата рождения</label>
-                <div class="col-xs-6">
-                  <div class="input-group">
-                    <div class="selectblock">
-                    <select id="dateday" class="form-control lowselects">
-                      <option selected>1</option>
-                      <?php
-                      for($i=1;$i<=31;$i++) {
-                        echo "<option>".$i."</option>";
-                      }
-                      ?>
-                    </select>
-
-                    <select id="datemonth" class="form-control lowselects">
-                      <option selected>Января</option>
-                      <option>1</option>
-                    </select>
-
-                    <select id="dateyear" class="form-control lowselects">
-                      <option selected>1985</option>
-                      <option>1</option>
-                    </select>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
+              
 
 
-              <button type="submit" class="btn btn-primary">Сохранить</button>
+              <button type="submit" class="btn btn-primary" onclick='pullMainData()'>Сохранить</button>
           
         </form>
 

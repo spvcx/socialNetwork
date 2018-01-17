@@ -50,7 +50,7 @@ class User {
         
         $userId = DB::query('SELECT id FROM user WHERE email=:email',array(':email'=>$this->email))[0]['id'];
         DB::query('INSERT INTO user_info VALUES(\'\',:user_id,:firstname,:lastname,:gender,:relations,:city,:about,:interests,:music,:tvshow,:books,:games)',array(':user_id'=>$userId,':firstname'=>$this->firstname,':lastname'=>$this->lastname,
-                    ':gender'=>$this->gender,':relations'=>'',':city'=>'',':about'=>'',':interests'=>'',
+                    ':gender'=>$this->gender,':relations'=>'',':city'=>'Ярославль',':about'=>'',':interests'=>'',
                     ':music'=>'',':tvshow'=>'',':books'=>'',':games'=>''));
         echo "Вы успешно зарегистрировались";
        

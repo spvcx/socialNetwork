@@ -51,3 +51,8 @@ body {
     padding: 0;
     width: 400px;
 }
+
+.top-margin {
+    margin-top: 20px;
+    margin-left: 15px;
+}

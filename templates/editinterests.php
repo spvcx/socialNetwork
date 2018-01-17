@@ -10,40 +10,13 @@
     
     <div class="panel-body">
         <div class="text-center">
-            <?php $userInfo = DB::query('SELECT * FROM user WHERE id=:user_id',array(':user_id'=>$userId))[0];
-            
+            <?php 
+            $userInfo = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0];
             ?>
         
         <form method="post" id="form" onsubmit="return false;" role="form" class="form-horizontal">
-                <div class="form-group has-feedback" id="firstname">
-                  <label for="email"  class="control-label col-xs-3">Имя</label>
-                  <div class="col-xs-6">
-                    <div class="input-group">    
-                      <input type="text" id="firstname" class="form-control inputw" required="required" name="firstname" value=<?php echo $userInfo['firstname']?>>
-                    </div>
-                  </div>
-                </div>
-
-
-              <div class="form-group has-feedback " id="lastname">
-                <label for="password" class="control-label col-xs-3">Фамилия</label>
-                <div class="col-xs-6">
-                  <div class="input-group">
-                    <input type="text" value=<?php echo $userInfo['lastname']?> id="lastname" class="form-control inputw" required="required" name="lastname">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group has-feedback " id="city">
-                <label for="password" class="control-label col-xs-3">Город</label>
-                <div class="col-xs-6">
-                  <div class="input-group">
-                    <input type="text" value=<?php echo $userInfo['city']?> id="city" class="form-control inputw" required="required" name="city">
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group has-feedback " id="about">
+                
+              <div class="form-group has-feedback " >
                 <label for="about" class="control-label col-xs-3">О себе</label>
                 <div class="col-xs-6">
                   <div class="input-group">
@@ -52,8 +25,53 @@
                 </div>
               </div>
 
+              <div class="form-group has-feedback " >
+                <label for="about" class="control-label col-xs-3">Интересы</label>
+                <div class="col-xs-6">
+                  <div class="input-group">
+                    <textarea class="form-control inputw" rows="2" id="interests"><?php echo $userInfo['interests']?></textarea>
+                  </div>
+                </div>
+              </div>
+              <?php echo "<input type='hidden' id='memValue' value='".$userInfo['user_id']."'>"; ?>
+              <div class="form-group has-feedback " >
+                <label for="about" class="control-label col-xs-3">Любимая музыка</label>
+                <div class="col-xs-6">
+                  <div class="input-group">
+                    <textarea class="form-control inputw" rows="2" id="music"><?php echo $userInfo['music']?></textarea>
+                  </div>
+                </div>
+              </div>
 
-              <button type="submit" class="btn btn-primary">Сохранить</button>
+              <div class="form-group has-feedback " >
+                <label for="about" class="control-label col-xs-3">Любимые тв-шоу</label>
+                <div class="col-xs-6">
+                  <div class="input-group">
+                    <textarea class="form-control inputw" rows="2" id="tvshow"><?php echo $userInfo['tvshow']?></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group has-feedback " >
+                <label for="about" class="control-label col-xs-3">Любимые книги</label>
+                <div class="col-xs-6">
+                  <div class="input-group">
+                    <textarea class="form-control inputw" rows="2" id="books"><?php echo $userInfo['books']?></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group has-feedback " >
+                <label for="about" class="control-label col-xs-3">Любимые игры</label>
+                <div class="col-xs-6">
+                  <div class="input-group">
+                    <textarea class="form-control inputw" rows="2" id="games"><?php echo $userInfo['games']?></textarea>
+                  </div>
+                </div>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary" onclick="pullInterestsData()">Сохранить</button>
           
         </form>
 
