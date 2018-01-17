@@ -1,3 +1,7 @@
+<?php if($userId) {
+	header('Location: http://spvcx.com');
+}
+?>
 <?php include "templates/include/header.php" ?>
 <div class="py-5">
     <div class="container">
@@ -64,6 +68,24 @@
 	      <span class="glyphicon form-control-feedback"></span>
 	    </div>
 	  </div>
+
+		<div class="form-group has-feedback " id="gender">
+                <label for="gender" class="control-label col-xs-3">Пол</label>
+                <div class="col-xs-6">
+                  <div class="input-group">
+
+										<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="gendermale" value="Мужской" checked>
+										<label class="form-check-label" for="gendermale">Мужской</label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="inlineRadioOptions" id="genderfemale" value="Женский">
+										<label class="form-check-label" for="genderfemale">Женский</label>
+									</div>
+									
+                  </div>
+                </div>
+    </div>
     <button type="submit" name='createaccount' onclick="ajaxRegister(this.form)" class="btn btn-success">Зарегистрироваться</button>
               
      </form>

@@ -30,7 +30,7 @@
         <ul class="nav navbar-nav navbar-right">
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo DB::query('SELECT firstname FROM user WHERE id=:user_id',array(':user_id'=>$userId))[0]['firstname'] ?> <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo DB::query('SELECT firstname FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0]['firstname'] ?> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Моя страница</a></li>
             <li><a href="http://spvcx.com/?action=editmain">Редактировать</a></li>

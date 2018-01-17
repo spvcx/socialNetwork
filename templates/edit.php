@@ -10,8 +10,8 @@
     
     <div class="panel-body">
         <div class="text-center">
-            <?php $userInfo = DB::query('SELECT * FROM user WHERE id=:user_id',array(':user_id'=>$userId))[0];
-            
+            <?php
+            $userInfo = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0];
             ?>
         
         <form method="post" id="form" onsubmit="return false;" role="form" class="form-horizontal">
@@ -41,11 +41,24 @@
                   <div class="input-group">
                     <select id="relations" class="form-control inputw">
                         <option selected><?php echo $userInfo['relations']?></option>
-                        <option>Не женат</option>
-                        <option>Женат</option>
+
+                        <?php if($userInfoMain['gender']=== 'Мужской'): ?>
+
+                          <option>Не женат</option>
+                          <option>Женат</option>
+                          <option>Влюблён</option>
+
+                        <?php else: ?>
+
+                          <option>Не замужем</option>
+                          <option>Замужем</option>
+                          <option>Влюблена</option>
+                        <?php endif ?>
+
+
                         <option>В активном поиске</option>
                         <option>В встречаюсь</option>
-                        <option>Влюблён</option>
+                        
                     </select>
                   </div>
                 </div>
@@ -59,8 +72,8 @@
                 <label for="city" class="control-label col-xs-3">Город</label>
                 <div class="col-xs-6">
                   <div class="input-group">
-                    <input type="text" <?php if(isset($userInfo['city']))
-                    {
+                    <input type="text" <?php 
+                    if($userInfo['city'] != '') {
                       echo "value=".$userInfo['city'];
                     }
                     ?> id="city" class="form-control inputw" required="required" name="city">

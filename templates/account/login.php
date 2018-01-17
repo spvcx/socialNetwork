@@ -1,3 +1,7 @@
+<?php if($userId) {
+	header('Location: http://spvcx.com');
+}
+?>
 <?php include "templates/include/header.php" ?>
 <div class="py-5">
     <div class="container">

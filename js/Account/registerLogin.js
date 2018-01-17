@@ -37,6 +37,7 @@ $(function() {
 })
 */
 var ready = true;
+var emailready = true;
 
 function emailChangeCheck() {
     var regmail = /^\w+@\w+\.\w{2,4}$/i;
@@ -55,7 +56,8 @@ function emailCheck(e) {
         data: { ajax: 'ajax', email: e }
     }).done(function(data) {
         ndata = data.slice(1, data.length);
-        ready = (ndata === '1') ? false : true;
+        emailready = (ndata === '1') ? false : true;
+        console.log('data email ' + ndata);
     });
 }
 
@@ -79,7 +81,7 @@ function ajaxRegister(form) {
         console.log('name error');
         ready = false;
     }
-    if (ready) {
+    if (ready && emailready) {
         console.log('ready');
         $.ajax({
             method: "POST",

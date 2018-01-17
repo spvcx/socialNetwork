@@ -1,4 +1,5 @@
 <?php include "templates/include/header.php" ?>
+
         <div class="panel panel-default">
             <div class="panel-body">
                 <input type="email" class="form-control" placeholder="Что у вас нового?">

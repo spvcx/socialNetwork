@@ -6,6 +6,7 @@ class User {
     public $password;
     public $firstname;
     public $lastname;
+    public $gender;
     
     public static function Authorized() {
 
@@ -26,6 +27,7 @@ class User {
         $this->password = isset($data['password']) ? $data['password'] : 'p';
         $this->firstname = isset($data['firstname']) ? $data['firstname'] : 'f';
         $this->lastname = isset($data['lastname']) ? $data['lastname'] : 'l';
+        $this->gender = isset($data['gender']) ? $data['gender'] : 'g';
     
     }
 
@@ -37,28 +39,18 @@ class User {
 
     public function registerUser() {
         
-        DB::query('INSERT INTO user VALUES(\'\',:email,:password,:firstname,:lastname)',array(':email'=>$this->email,
-        ':password'=>password_hash($this->password,PASSWORD_BCRYPT),':firstname'=>$this->firstname,':lastname'=>$this->lastname));
+        DB::query('INSERT INTO user VALUES(\'\',:email,:password)',array(':email'=>$this->email,
+        ':password'=>password_hash($this->password,PASSWORD_BCRYPT)));
         $this->setCID();
-        header('Location: /');
+        
+        $userId = DB::query('SELECT id FROM user WHERE email=:email',array(':email'=>$this->email))[0]['id'];
+        DB::query('INSERT INTO user_info VALUES(\'\',:user_id,:firstname,:lastname,:gender,:relations,:city,:about,:interests,:music,:tvshow,:books,:games)',array(':user_id'=>$userId,':firstname'=>$this->firstname,':lastname'=>$this->lastname,
+                    ':gender'=>$this->gender,':relations'=>'',':city'=>'',':about'=>'',':interests'=>'',
+                    ':music'=>'',':tvshow'=>'',':books'=>'',':games'=>''));
         echo "Вы успешно зарегистрировались";
-       // print"email: ".$this->email." password: ".$this->password." firstname: ".$this->firstname." lastname: ".$this->lastname;
-
+       
     }
-    /*
-    public static function loginUser($e,$p) {
-        if(DB::query('SELECT  email FROM user WHERE email=:email',array(':email'=>$e))) {
-            if (password_verify($p, DB::query('SELECT password FROM user WHERE email=:email', array(':email'=>$e))[0]['password']))  {
-                echo "Успешная авторизация";
-            } else {
-                echo 'Неправильный пароль';
-            }    
-        } else {
-            echo "Пользователя с таким email не существует";
-        }
-
-    }
-    */
+   
     public  function loginUser() {
 
         if(DB::query('SELECT  email FROM user WHERE email=:email',array(':email'=>$this->email))) {
@@ -79,7 +71,8 @@ class User {
         $c = True;
         $token = $token = bin2hex(openssl_random_pseudo_bytes(64, $c));
         $userId = DB::query('SELECT id FROM user WHERE email=:email',array(':email'=>$this->email))[0]['id'];
-        DB::query('INSERT INTO cookie_token VALUES(\'\',:token,:user_id)',array(':token'=>sha1($token), ':user_id'=>$userId));
+        echo "email from cookie:".$this->email;
+        DB::query('INSERT INTO cookie_token VALUES(\'\',:user_id,:token)',array(':user_id'=>$userId,':token'=>sha1($token)));
         setcookie("CID", $token, time() + 60 * 60 * 24 * 7, '/', NULL, NULL, TRUE);
 
     }
