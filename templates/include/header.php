@@ -8,7 +8,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!--<script src="js/notifies.js"></script>-->
-    <script src="js/main.js"></script>
+    <script src="js/Account/registerLogin.js"></script>
     
     <!--<link rel="stylesheet" type="text/css" href="css/bootstrap3.min.css" />-->
     <!--
@@ -30,7 +30,7 @@
         <ul class="nav navbar-nav navbar-right">
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Аккаунт <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo DB::query('SELECT firstname FROM user WHERE id=:user_id',array(':user_id'=>$userId))[0]['firstname'] ?> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Моя страница</a></li>
             <li><a href="http://spvcx.com/?action=editmain">Редактировать</a></li>
