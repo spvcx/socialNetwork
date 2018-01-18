@@ -52,10 +52,10 @@
                   <span class="glyphicon form-control-feedback"></span>
                 </div>
               </div>
-              <button type="submit" name='login' id="login" onclick="ajaxLogin()" class="btn btn-success right-margin">Войти</button>
+              <button type="submit" name='login' id="login" onclick="ajaxLogin()" class="btn btn-success mx-auto right-margin">Войти</button><a href="http://spvcx.com/?action=register" class="btn btn-primary right-margin">Создать аккаунт</a>
           <!-- Конец блока для ввода password-->
              </form>
-             <button class="btn btn-primary top-margin"><a href="http://spvcx.com/?action=register">Создать аккаунт</a></button>
+             
               
             </div>
           </div>
