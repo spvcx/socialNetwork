@@ -29,10 +29,23 @@ case 'editstudy':
 case 'editinterests':
 	editinterests();
 	break;
+case 'showpage':
+	showpage();
+	break;
 
 default:
 	defaultpage();
 	break;
+}
+
+
+function showpage()
+{
+
+	global $userId;
+	$results = array();
+	require(TEMPLATE_PATH."/showpage.php");
+
 }
 
 function editmain()

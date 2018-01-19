@@ -1,3 +1,8 @@
+* {
+    font-size: 12.5px;
+    font-family: 'Arial';
+}
+
 footer {
     color: white;
 }
@@ -55,4 +60,36 @@ body {
 .top-margin {
     margin-top: 20px;
     margin-left: 15px;
+}
+
+.my-menu {
+    font-size: 12px !important;
+}
+
+.top-profile-img {
+    display: inline-block;
+    vertical-align: top;
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    margin-left: 10px;
+}
+
+.left-column-wrap {
+    position: relative;
+    width: 220px;
+    height: 370px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}
+
+.for-btn {
+    margin-top: 10px;
+    width: 200px;
+}
+
+.img-radius {
+    margin-top: 10px;
+    border-radius: 4px;
 }

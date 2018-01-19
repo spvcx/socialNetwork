@@ -10,9 +10,6 @@
   </div>
   <div class="panel-body">
      <div class="text-center">
-        <?php
-           $userInfo = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0];
-           ?>
         <form method="post"  onsubmit="return false;" role="form" class="form-horizontal">
            <div class="form-group has-feedback" >
               <label for="firstame"  class="control-label col-xs-3">Имя</label>

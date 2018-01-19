@@ -11,10 +11,6 @@
     
     <div class="panel-body">
         <div class="text-center">
-            <?php $userInfo = DB::query('SELECT * FROM user WHERE id=:user_id',array(':user_id'=>$userId))[0];
-            
-            ?>
-        
         <form method="post" id="form" onsubmit="return false;" role="form" class="form-horizontal">
                 <div class="form-group has-feedback" id="firstname">
                   <label for="email"  class="control-label col-xs-3">Имя</label>

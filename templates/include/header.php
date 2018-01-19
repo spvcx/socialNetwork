@@ -24,10 +24,12 @@
                <a class="navbar-brand" href="/">YGK SCNet</a>
                <?php if ($userId): ?>
                <ul class="nav navbar-nav navbar-right">
+               <?php $userInfo = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0]; ?>
                   <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo DB::query('SELECT firstname FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0]['firstname'] ?> <b class="caret"></b></a>
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $userInfo['firstname']; ?><img src="<?php echo ($userInfo['avatar'] == '') ? 'userimages/def.png' : 'userimages/'.$userInfo['avatar'] ?>" alt="" class="top-profile-img">
+                         <b class="caret"></b></a>
                      <ul class="dropdown-menu">
-                        <li><a href="#">Моя страница</a></li>
+                        <li><a href="http://spvcx.com/?action=showpage&id=<?php echo $userId?>">Моя страница</a></li>
                         <li><a href="http://spvcx.com/?action=editmain">Редактировать</a></li>
                         <li><a href="#">Настройки</a></li>
                         <li class="divider"></li>
@@ -42,13 +44,13 @@
       <div class="container">
       <?php if($userId): ?>
       <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-3 col-md-3 col-sm-3">
          <div class="sidebar-nav">
-            <div class style="width:200px; padding: 8px 0px;">
+            <div class style="width:210px; margin:0; padding:0;">
                <ul class="nav nav-list">
-                  <li><a href="#"> <span class="glyphicon glyphicon-home" style="margin-right:10px;"></span>Моя Страница</a></li>
+                  <li><a href="http://spvcx.com/?action=showpage&id=<?php echo $userId?>"> <span class="glyphicon glyphicon-home" style="margin-right:10px;"></span>Моя Страница</a></li>
                   <li><a href="/"> <span class="glyphicon glyphicon-folder-open" style="margin-right:10px;"></span>Новости</a></li>
-                  <li><a href="#"> <span class="glyphicon glyphicon-envelope" style="margin-right:10px;"></span>Мои Сообщения <span class="badge badge-info">4</span></a></li>
+                  <li><a href="#"> <span class="glyphicon glyphicon-envelope" style="margin-right:10px;"></span>Мои Сообщения <span class="badge badge-info">111</span></a></li>
                   <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right:10px;"></span>Мои друзья </a></li>
                   <li ><a href="#"> <span class="glyphicon glyphicon-search" style="margin-right:10px;"></span>Поиск</a></li>
                </ul>
@@ -56,5 +58,5 @@
          </div>
       </div>
       <?php endif?>
-      <div class="col-lg-8" style="padding-top:0px;">
+      <div class="col-lg-9 col-md-9 col-sm-9" style="padding-top:0px;">
       <!-- end will in the footer.php -->
