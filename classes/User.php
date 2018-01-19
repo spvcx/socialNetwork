@@ -72,7 +72,7 @@ class User
 			':lastname' => $this->lastname,
 			':gender' => $this->gender,
 			':relations' => '',
-			':city' => 'Ð¯Ñ€Ð¾ÑÐ»Ð°Ð²Ð»ÑŒ',
+			':city' => 'Ярославль',
 			':about' => '',
 			':interests' => '',
 			':music' => '',
@@ -81,7 +81,7 @@ class User
 			':games' => '',
 			':avatar' => ''
 		));
-		echo "Ð’Ñ‹ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð»Ð¸ÑÑŒ";
+		
 	}
 
 	public
