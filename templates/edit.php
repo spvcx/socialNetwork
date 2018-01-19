@@ -1,98 +1,71 @@
-<?php include "templates/include/header.php" ?>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <ul class="nav nav-tabs">
-            <li class='active'><a href="http://spvcx.com/?action=editmain">Основное</a></li>
-            <li><a href="http://spvcx.com/?action=editstudy">Учеба</a></li>
-            <li><a href="http://spvcx.com/?action=editinterests">Интересы </a></li>
-        </ul>
-    </div>
-    
-    <div class="panel-body">
-        <div class="text-center">
-            <?php
-            $userInfo = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0];
-            ?>
-        
+<?php if(!$userId) header('location: http://spvcx.com'); ?>
+  <?php include "templates/include/header.php" ?>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+     <ul class="nav nav-tabs">
+        <li class='active'><a href="http://spvcx.com/?action=editmain">Основное</a></li>
+        <li><a href="http://spvcx.com/?action=editstudy">Учеба</a></li>
+        <li><a href="http://spvcx.com/?action=editinterests">Интересы </a></li>
+     </ul>
+  </div>
+  <div class="panel-body">
+     <div class="text-center">
+        <?php
+           $userInfo = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0];
+           ?>
         <form method="post"  onsubmit="return false;" role="form" class="form-horizontal">
-                <div class="form-group has-feedback" >
-                  <label for="firstame"  class="control-label col-xs-3">Имя</label>
-                  <div class="col-xs-6">
-                    <div class="input-group">    
-                      <input type="text" id="firstname" class="form-control inputw" required="required" name="firstname" value=<?php echo $userInfo['firstname']?>>
-                    </div>
-                  </div>
-                </div>
-
-            <?php echo "<input type='hidden' id='memValue' value='".$userInfo['user_id']."'>"; ?>
-              <div class="form-group has-feedback " >
-                <label for="lastname" class="control-label col-xs-3">Фамилия</label>
-                <div class="col-xs-6">
-                  <div class="input-group">
+           <div class="form-group has-feedback" >
+              <label for="firstame"  class="control-label col-xs-3">Имя</label>
+              <div class="col-xs-6">
+                 <div class="input-group">    
+                    <input type="text" id="firstname" class="form-control inputw" required="required" name="firstname" value=<?php echo $userInfo['firstname']?>>
+                 </div>
+              </div>
+           </div>
+           <?php echo "<input type='hidden' id='memValue' value='".$userInfo['user_id']."'>"; ?>
+           <div class="form-group has-feedback " >
+              <label for="lastname" class="control-label col-xs-3">Фамилия</label>
+              <div class="col-xs-6">
+                 <div class="input-group">
                     <input type="text" value=<?php echo $userInfo['lastname']?> id="lastname" class="form-control inputw" required="required" name="lastname">
-                  </div>
-                </div>
+                 </div>
               </div>
-
-
-              <div class="form-group has-feedback " >
-                <label for="relations" class="control-label col-xs-3">Семейное положение</label>
-                <div class="col-xs-6">
-                  <div class="input-group">
+           </div>
+           <div class="form-group has-feedback " >
+              <label for="relations" class="control-label col-xs-3">Семейное положение</label>
+              <div class="col-xs-6">
+                 <div class="input-group">
                     <select id="relations" class="form-control inputw">
-                        <option selected><?php echo $userInfo['relations']?></option>
-
-                        <?php if($userInfo['gender']=== 'Мужской'): ?>
-
-                          <option>Не женат</option>
-                          <option>Женат</option>
-                          <option>Влюблён</option>
-
-                        <?php else: ?>
-
-                          <option>Не замужем</option>
-                          <option>Замужем</option>
-                          <option>Влюблена</option>
-                        <?php endif ?>
-
-
-                        <option>В активном поиске</option>
-                        <option>В встречаюсь</option>
-                        
+                       <option selected><?php echo $userInfo['relations']?></option>
+                       <?php if($userInfo['gender']=== 'Мужской'): ?>
+                       <option>Не женат</option>
+                       <option>Женат</option>
+                       <option>Влюблён</option>
+                       <?php else: ?>
+                       <option>Не замужем</option>
+                       <option>Замужем</option>
+                       <option>Влюблена</option>
+                       <?php endif ?>
+                       <option>В активном поиске</option>
+                       <option>В встречаюсь</option>
                     </select>
-                  </div>
-                </div>
+                 </div>
               </div>
-
-
-
-              
-
-              <div class="form-group has-feedback " >
-                <label for="city" class="control-label col-xs-3">Город</label>
-                <div class="col-xs-6">
-                  <div class="input-group">
+           </div>
+           <div class="form-group has-feedback " >
+              <label for="city" class="control-label col-xs-3">Город</label>
+              <div class="col-xs-6">
+                 <div class="input-group">
                     <input type="text" <?php 
-                    if($userInfo['city'] != '') {
-                      echo "value=".$userInfo['city'];
-                    }
-                    ?> id="city" class="form-control inputw" required="required" name="city">
-                  </div>
-                </div>
+                       if($userInfo['city'] != '') {
+                         echo "value=".$userInfo['city'];
+                       }
+                       ?> id="city" class="form-control inputw" required="required" name="city">
+                 </div>
               </div>
-
-              
-
-              
-
-
-              <button type="submit" class="btn btn-primary" onclick='pullMainData()'>Сохранить</button>
-          
+           </div>
+           <button type="submit" class="btn btn-primary" onclick='pullMainData()'>Сохранить</button>
         </form>
-
-
-
-    </div>
-    
-</div>
-<?php include "templates/include/footer.php" ?>
+     </div>
+  </div>
+  <?php include "templates/include/footer.php" ?>

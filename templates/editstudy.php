@@ -1,3 +1,4 @@
+<?php if(!$userId) header('location: http://spvcx.com'); ?>
 <?php include "templates/include/header.php" ?>
 <div class="panel panel-default">
     <div class="panel-heading">
