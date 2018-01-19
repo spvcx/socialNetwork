@@ -11,18 +11,8 @@
             <div class="card text-white p-5 bg-dark">
                <div class="card-body">
                   <h1 class="mb-4">Вход</h1>
-                  <div class="row text-center">
-                     <div class="alert alert-danger hidden" id="success-danger ">
-                        <h2 class="text-center">Ошибка</h2>
-                          <div>Неправильный email или пароль</div>
-                     </div>
-                  </div>
-                  <div class="row text-center">
-                     <div class="alert alert-danger hidden myalert" id="success-danger ">
-                        <h2 class="text-center">Ошибка</h2>
-                        <div>Необходимо заполнить все поля</div>
-                     </div>
-                  </div>
+                  <div id="to-alerts"></div>
+                    
                   <form method="post" id="form" onsubmit="return false;" role="form" class="form-horizontal">
                      <!-- Блок для ввода email -->
                      <div class="form-group has-feedback" id="emailfeed">

@@ -1,9 +1,11 @@
+var have = false;
+
 function ajaxLogin() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     $('#emailfeed').removeClass('has-error');
     $('#passwordfeed').removeClass('has-error');
-
+    if (have) $("#my-error").remove();
     if (email && password) {
 
         $.ajax({
@@ -20,17 +22,33 @@ function ajaxLogin() {
                 default:
                     $('#emailfeed').addClass('has-error');
                     $('#passwordfeed').addClass('has-error');
-                    $('.alert').removeClass('hidden');
-                    $('.myalert').addClass('hidden');
+                    createErr('Неправильный email или пароль');
                     break;
             }
         });
     } else {
-        $(".myalert").removeClass('hidden');
+        createErr('Необходимо заполнить все поля');
+        have = true;
     }
 }
 
-
+function createErr(text) {
+    var div = document.createElement('div');
+    div.id = 'my-error';
+    var rowdiv = document.createElement('div');
+    rowdiv.className = 'row text-center';
+    var alertdiv = document.createElement('div');
+    alertdiv.className = 'alert alert-danger'
+    alertdiv.id = 'success-danger';
+    alertdiv.innerHTML = "<h2>Ошибка</h2>";
+    var messagediv = document.createElement('div');
+    messagediv.innerHTML = (text);
+    alertdiv.appendChild(messagediv);
+    rowdiv.appendChild(alertdiv);
+    div.appendChild(rowdiv);
+    var to = document.getElementById('to-alerts');
+    to.appendChild(div);
+}
 /*
 $(function() {
 
