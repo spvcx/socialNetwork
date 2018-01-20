@@ -26,7 +26,7 @@
                <ul class="nav navbar-nav navbar-right">
                <?php $userInfo = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userId))[0]; ?>
                   <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $userInfo['firstname']; ?><img src="<?php echo ($userInfo['avatar'] == '') ? 'userimages/def.png' : 'userimages/'.$userInfo['avatar'] ?>" alt="" class="top-profile-img">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $userInfo['firstname']; ?><img src="<?php echo 'userimages/'.$userInfo['avatar'] ?>" alt="" class="top-profile-img">
                          <b class="caret"></b></a>
                      <ul class="dropdown-menu">
                         <li><a href="http://spvcx.com/?action=showpage&id=<?php echo $userId?>">Моя страница</a></li>

@@ -133,7 +133,6 @@ body {
 
 .page-profile-info {
     padding-top: 10px;
-    border-bottom: 1px solid #e7e8ec;
 }
 
 .row-info {
@@ -160,4 +159,24 @@ body {
     content: '';
     display: block;
     clear: both;
+}
+
+.info-block {
+    padding: 0 0 29px;
+    border-top: 1px solid #e7e8ec;
+    margin-top: 20px;
+}
+
+.info-header {
+    position: relative;
+    margin: -11px 0 4px;
+}
+
+.label-info-header {
+    padding-bottom: 4px;
+    padding-right: 10px;
+    background-color: #fff;
+    line-height: 150%;
+    font-size: 14px;
+    color: black;
 }

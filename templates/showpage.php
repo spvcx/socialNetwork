@@ -9,7 +9,7 @@
       <?php include "templates/include/header.php" ?>
       <div class="left-column-wrap">
          <div class="card text-center">
-            <img style='width:200px; height:300px; padding-top:5px;' src="<?php echo ($userPageInfo['avatar'] == '') ? 'userimages/def.png' : 'userimages/'.$userPageInfo['avatar'] ?>" alt="Card image cap" class="card-img-top img-radius">
+            <img style='width:200px; height:300px; padding-top:5px;' src="<?php echo 'userimages/'.$userPageInfo['avatar'] ?>" alt="Card image cap" class="card-img-top img-radius">
             <?php  if($own) : ?>
             <div class="card-block">
                <button class="btn btn-default for-btn" type='button' data-toggle='modal' data-target='#avatarUpload'>Редактировать</button>
@@ -69,6 +69,11 @@
                               <?php endif ?>
                         </div>
                         <?php endif ?>
+                        <div class="info-block clear_fix">
+                              <div class="info-header">
+                                    <span class="label-info-header">Интересы</span>
+                              </div>
+                        </div>
                   </div>
             </div>
       </div>
