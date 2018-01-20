@@ -1,11 +1,14 @@
-var have = false;
+let have = false;
 
 function ajaxLogin() {
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
     $('#emailfeed').removeClass('has-error');
     $('#passwordfeed').removeClass('has-error');
-    if (have) $("#my-error").remove();
+    if (have) {
+        $("#my-error").fadeOut('slow');
+        $('#my-error').remove();
+    }
     if (email && password) {
 
         $.ajax({
@@ -23,11 +26,14 @@ function ajaxLogin() {
                     $('#emailfeed').addClass('has-error');
                     $('#passwordfeed').addClass('has-error');
                     createErr('Неправильный email или пароль');
+                    $("#my-error").fadeIn('slow');
+                    have = true;
                     break;
             }
         });
     } else {
         createErr('Необходимо заполнить все поля');
+        $("#my-error").fadeIn('slow');
         have = true;
     }
 }
