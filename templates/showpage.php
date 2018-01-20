@@ -40,7 +40,6 @@
             <?php endif ?>
          </div>
       </div>
-
       <div class="right-column-wrap">
             <div class="page-info-block">
                   <div class="page-info-wrap">

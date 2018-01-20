@@ -6,4 +6,5 @@
       <script src="js/Account/registerLogin.js"></script>
       <script src="js/Account/editData.js"></script>
       <script src="js/Account/avatarEdit.js"></script>
+      <script src="js/Account/bdayRelations.js"></script>
 </html>

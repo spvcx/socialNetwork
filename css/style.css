@@ -162,6 +162,10 @@ body {
     max-width: 400px;
 }
 
+.white-color {
+    color: white !important;
+}
+
 .clear_fix:after {
     content: '';
     display: block;

@@ -33,19 +33,18 @@
               <div class="col-xs-6">
                  <div class="input-group">
                     <select id="relations" class="form-control inputw">
-                       <option selected><?php echo $userInfo['relations']?></option>
+                       <option id="0"selected><?php echo $userInfo['relations']?></option>
                        <?php if($userInfo['gender']=== 'Мужской'): ?>
-                       <option></option>
-                       <option>Не женат</option>
-                       <option>Женат</option>
-                       <option>Влюблён</option>
+                       <option id="1">Не женат</option>
+                       <option id="2">Женат</option>
+                       <option id="3">Влюблён</option>
                        <?php else: ?>
-                       <option>Не замужем</option>
-                       <option>Замужем</option>
-                       <option>Влюблена</option>
+                       <option id="1">Не замужем</option>
+                       <option id="2">Замужем</option>
+                       <option id="3">Влюблена</option>
                        <?php endif ?>
-                       <option>В активном поиске</option>
-                       <option>Встречаюсь</option>
+                       <option id="4">В активном поиске</option>
+                       <option id="5">Встречаюсь</option>
                     </select>
                  </div>
               </div>
