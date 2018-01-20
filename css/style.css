@@ -70,6 +70,12 @@ body {
     font-size: 12px !important;
 }
 
+.image-avatar {
+    padding-top: 5px;
+    width: 200px;
+    height: 300px;
+}
+
 .top-profile-img {
     display: inline-block;
     vertical-align: top;
@@ -153,6 +159,7 @@ body {
 
 .info-label {
     overflow: hidden;
+    max-width: 400px;
 }
 
 .clear_fix:after {
@@ -170,6 +177,7 @@ body {
 .info-header {
     position: relative;
     margin: -11px 0 4px;
+    margin-bottom: 15px;
 }
 
 .label-info-header {

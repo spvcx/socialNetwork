@@ -9,7 +9,7 @@
       <?php include "templates/include/header.php" ?>
       <div class="left-column-wrap">
          <div class="card text-center">
-            <img style='width:200px; height:300px; padding-top:5px;' src="<?php echo 'userimages/'.$userPageInfo['avatar'] ?>" alt="Card image cap" class="card-img-top img-radius">
+            <img class='image-avatar' src="<?php echo 'userimages/'.$userPageInfo['avatar'] ?>" alt="Card image cap" class="card-img-top img-radius">
             <?php  if($own) : ?>
             <div class="card-block">
                <button class="btn btn-default for-btn" type='button' data-toggle='modal' data-target='#avatarUpload'>Редактировать</button>
@@ -33,6 +33,10 @@
                   </div>
                </div>
             </div>
+            <?php else: ?>
+            <div class="card-block">
+               <a href="/" class="btn btn-primary for-btn">Написать сообщение</a>
+             </div>
             <?php endif ?>
          </div>
       </div>
@@ -47,7 +51,7 @@
                         <div class="page-profile-info clear_fix">
                               <div class="row-info">
                                     <div class="info-label-header">День рождения</div>
-                                    <div class="info-label">10 октября 1984 г.</div>
+                                    <div class="info-label">10 октября 2005 г.</div>
                               </div>
                               <?php if($userPageInfo['city'] != '') : ?>
                               <div class="row-info">
@@ -71,9 +75,65 @@
                         <?php endif ?>
                         <div class="info-block clear_fix">
                               <div class="info-header">
-                                    <span class="label-info-header">Интересы</span>
+                                    <span class="label-info-header">ЯГК</span>
+                              </div>
+                              <div class="row-info">
+                                    <div class="info-label-header">Отделение</div>
+                                    <div class="info-label">ОИТУП</div>
+                              </div>
+                              <div class="row-info">
+                                    <div class="info-label-header">Группа</div>
+                                    <div class="info-label">ИС1-41</div>
                               </div>
                         </div>
+                        <?php if($userPageInfo['about'] != '' 
+                        or $userPageInfo['interests'] != '' 
+                        or $userPageInfo['music'] != '' 
+                        or $userPageInfo['tvshow'] != '' 
+                        or $userPageInfo['books'] != '' 
+                        or $userPageInfo['games'] != '' ) :?>
+                        <div class="info-block clear_fix">
+                              <div class="info-header">
+                                    <span class="label-info-header">Дополнительная информация</span>
+                              </div>
+                              <?php if($userPageInfo['about'] != '') : ?>
+                              <div class="row-info">
+                                    <div class="info-label-header">О себе</div>
+                                    <div class="info-label"><?php echo $userPageInfo['about']?></div>
+                              </div>
+                              <?php endif ?>
+                              <?php if($userPageInfo['interests'] != '') : ?>
+                              <div class="row-info">
+                                    <div class="info-label-header">Интересы</div>
+                                    <div class="info-label"><?php echo $userPageInfo['interests']?></div>
+                              </div>
+                              <?php endif ?>
+                              <?php if($userPageInfo['music'] != '') : ?>
+                              <div class="row-info">
+                                    <div class="info-label-header">Любимая музыка</div>
+                                    <div class="info-label"><?php echo $userPageInfo['music']?></div>
+                              </div>
+                              <?php endif ?>
+                              <?php if($userPageInfo['tvshow'] != '') : ?>
+                              <div class="row-info">
+                                    <div class="info-label-header">Любимые тв-шоу</div>
+                                    <div class="info-label"><?php echo $userPageInfo['tvshow']?></div>
+                              </div>
+                              <?php endif ?>
+                              <?php if($userPageInfo['books'] != '') : ?>
+                              <div class="row-info">
+                                    <div class="info-label-header">Любимые книги</div>
+                                    <div class="info-label"><?php echo $userPageInfo['books']?></div>
+                              </div>
+                              <?php endif ?>
+                              <?php if($userPageInfo['games'] != '') : ?>
+                              <div class="row-info">
+                                    <div class="info-label-header">Любимые игры</div>
+                                    <div class="info-label"><?php echo $userPageInfo['games']?></div>
+                              </div>
+                              <?php endif ?>
+                        </div>
+                        <?php endif ?>
                   </div>
             </div>
       </div>
