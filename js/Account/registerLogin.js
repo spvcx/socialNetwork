@@ -1,13 +1,14 @@
-let have = false;
+let haveError = false;
 
 function ajaxLogin() {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     $('#emailfeed').removeClass('has-error');
     $('#passwordfeed').removeClass('has-error');
-    if (have) {
+    if (haveError) {
         $("#my-error").fadeOut('slow');
         $('#my-error').remove();
+        haveError = false;
     }
     if (email && password) {
 
@@ -23,18 +24,16 @@ function ajaxLogin() {
                     location.href = 'http://spvcx.com';
                     break;
                 default:
-                    $('#emailfeed').addClass('has-error');
-                    $('#passwordfeed').addClass('has-error');
                     createErr('Неправильный email или пароль');
                     $("#my-error").fadeIn('slow');
-                    have = true;
+                    $('#emailfeed').addClass('has-error');
+                    $('#passwordfeed').addClass('has-error');
                     break;
             }
         });
     } else {
         createErr('Необходимо заполнить все поля');
         $("#my-error").fadeIn('slow');
-        have = true;
     }
 }
 
@@ -54,6 +53,7 @@ function createErr(text) {
     div.appendChild(rowdiv);
     var to = document.getElementById('to-alerts');
     to.appendChild(div);
+    haveError = true;
 }
 /*
 $(function() {

@@ -35,6 +35,7 @@
                     <select id="relations" class="form-control inputw">
                        <option selected><?php echo $userInfo['relations']?></option>
                        <?php if($userInfo['gender']=== 'Мужской'): ?>
+                       <option></option>
                        <option>Не женат</option>
                        <option>Женат</option>
                        <option>Влюблён</option>
@@ -44,7 +45,7 @@
                        <option>Влюблена</option>
                        <?php endif ?>
                        <option>В активном поиске</option>
-                       <option>В встречаюсь</option>
+                       <option>Встречаюсь</option>
                     </select>
                  </div>
               </div>
@@ -57,7 +58,19 @@
                        if($userInfo['city'] != '') {
                          echo "value=".$userInfo['city'];
                        }
-                       ?> id="city" class="form-control inputw" required="required" name="city">
+                       ?> id="city" class="form-control inputw"  name="city">
+                 </div>
+              </div>
+           </div>
+           <div class="form-group has-feedback " >
+              <label for="city" class="control-label col-xs-3">Веб-сайт</label>
+              <div class="col-xs-6">
+                 <div class="input-group">
+                    <input type="text" <?php 
+                       if($userInfo['website'] != '') {
+                         echo "value=".$userInfo['website'];
+                       }
+                       ?> id="website" class="form-control inputw"  name="website">
                  </div>
               </div>
            </div>

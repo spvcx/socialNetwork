@@ -3,13 +3,14 @@ function pullMainData() {
     var lastName = document.getElementById('lastname').value;
     var relations = document.getElementById('relations').value;
     var city = document.getElementById('city').value;
+    var website = document.getElementById('website').value;
     var id = document.getElementById('memValue').value;
     //console.log('id: ' + id + ' firstname: ' + firstName + ' lastname: ' + lastName + ' relations: ' + relations + ' city: ' + city);
     if (firstname && lastName) {
         $.ajax({
             method: "POST",
             url: 'editdata.php',
-            data: { maindata: 'main', id: id, firstname: firstName, lastname: lastName, relations: relations, city: city }
+            data: { maindata: 'main', id: id, firstname: firstName, lastname: lastName, relations: relations, city: city, website: website }
         }).done(function(data) {
             ndata = data.slice(1, data.length);
             //console.log(ndata);

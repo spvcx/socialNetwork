@@ -9,7 +9,7 @@
       <?php include "templates/include/header.php" ?>
       <div class="left-column-wrap">
          <div class="card text-center">
-            <img style='width:200px; height:300px;' src="<?php echo ($userPageInfo['avatar'] == '') ? 'userimages/def.png' : 'userimages/'.$userPageInfo['avatar'] ?>" alt="Card image cap" class="card-img-top img-radius">
+            <img style='width:200px; height:300px; padding-top:5px;' src="<?php echo ($userPageInfo['avatar'] == '') ? 'userimages/def.png' : 'userimages/'.$userPageInfo['avatar'] ?>" alt="Card image cap" class="card-img-top img-radius">
             <?php  if($own) : ?>
             <div class="card-block">
                <button class="btn btn-default for-btn" type='button' data-toggle='modal' data-target='#avatarUpload'>Редактировать</button>
@@ -35,5 +35,41 @@
             </div>
             <?php endif ?>
          </div>
+      </div>
+
+      <div class="right-column-wrap">
+            <div class="page-info-block">
+                  <div class="page-info-wrap">
+                        <div class="page-info-name">
+                              <h2 class="page-name"><?php echo $userPageInfo['firstname']." ".$userPageInfo['lastname'];?></h2>
+                        </div>
+                        <?php if($userPageInfo['city'] != '' or $userPageInfo['relations'] != '' or $userPageInfo['relations'] != '') :?>
+                        <div class="page-profile-info clear_fix">
+                              <div class="row-info">
+                                    <div class="info-label-header">День рождения</div>
+                                    <div class="info-label">10 октября 1984 г.</div>
+                              </div>
+                              <?php if($userPageInfo['city'] != '') : ?>
+                              <div class="row-info">
+                                    <div class="info-label-header">Город</div>
+                                    <div class="info-label"><?php echo $userPageInfo['city']?></div>
+                              </div>
+                              <?php endif ?>
+                              <?php if($userPageInfo['relations'] != '') : ?>
+                              <div class="row-info">
+                                    <div class="info-label-header">Семейное пололжение</div>
+                                    <div class="info-label"><?php echo $userPageInfo['relations']?></div>
+                              </div>
+                              <?php endif ?>
+                              <?php if($userPageInfo['website'] != '') : ?>
+                              <div class="row-info">
+                                    <div class="info-label-header">Веб-сайт</div>
+                                    <div class="info-label"><?php echo $userPageInfo['website']?></div>
+                              </div>
+                              <?php endif ?>
+                        </div>
+                        <?php endif ?>
+                  </div>
+            </div>
       </div>
       <?php include "templates/include/footer.php" ?>

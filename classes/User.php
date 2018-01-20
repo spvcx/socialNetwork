@@ -79,7 +79,8 @@ class User
 			':tvshow' => '',
 			':books' => '',
 			':games' => '',
-			':avatar' => ''
+			':avatar' => '',
+			':website' => ''
 		));
 		
 	}
@@ -104,18 +105,6 @@ class User
 		else {
 			print 'email';
 		}
-
-		/*
-		if(DB::query('SELECT  email FROM user WHERE email=:email',array(':email'=>$this->email))) {
-		if ($this->password == DB::query('SELECT password FROM user WHERE email=:email', array(':email'=>$this->email))[0]['password'])  {
-		$this->setCID();
-		echo 'success';
-		} else {
-		echo 'password';
-		}
-		} else {
-		print 'email';
-		}*/
 	}
 
 	public
