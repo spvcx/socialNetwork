@@ -48,10 +48,12 @@
                         </div>
                         <?php if($userPageInfo['city'] != '' or $userPageInfo['relations'] != '' or $userPageInfo['relations'] != '') :?>
                         <div class="page-profile-info clear_fix">
+                        <?php if($userPageInfo['bday'] != '' and $userPageInfo['bmonth'] != ''  and $userPageInfo['byear'] != '') : ?>
                               <div class="row-info">
                                     <div class="info-label-header">День рождения</div>
-                                    <div class="info-label">10 октября 2005 г.</div>
+                                    <div class="info-label"><?php echo $userPageInfo['bday'].' '.$userPageInfo['bmonth'].' '.$userPageInfo['byear'].' г.'; ?></div>
                               </div>
+                        <?php endif ?> 
                               <?php if($userPageInfo['city'] != '') : ?>
                               <div class="row-info">
                                     <div class="info-label-header">Город</div>

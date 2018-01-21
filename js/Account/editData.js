@@ -5,15 +5,18 @@ function pullMainData() {
     var city = document.getElementById('city').value;
     var website = document.getElementById('website').value;
     var id = document.getElementById('memValue').value;
+    var bday = document.getElementById('bday').value;
+    var bmonth = document.getElementById('bmonth').value;
+    var byear = document.getElementById('byear').value;
     //console.log('id: ' + id + ' firstname: ' + firstName + ' lastname: ' + lastName + ' relations: ' + relations + ' city: ' + city);
     if (firstname && lastName) {
         $.ajax({
             method: "POST",
             url: 'editdata.php',
-            data: { maindata: 'main', id: id, firstname: firstName, lastname: lastName, relations: relations, city: city, website: website }
+            data: { maindata: 'main', id: id, firstname: firstName, lastname: lastName, relations: relations, city: city, website: website, bday: bday, bmonth: bmonth, byear: byear }
         }).done(function(data) {
             ndata = data.slice(1, data.length);
-            //console.log(ndata);
+            console.log(ndata);
 
         });
     }

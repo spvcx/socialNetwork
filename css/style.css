@@ -48,6 +48,7 @@ body {
     margin: 0;
     padding: 0;
     margin-left: 10px;
+    text-align: center;
 }
 
 .selectblock {
@@ -191,4 +192,80 @@ body {
     line-height: 150%;
     font-size: 14px;
     color: black;
+}
+
+nav {
+    width: 90px;
+    height: 30px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bornmenu>li {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.bornmenu {
+    width: 400px;
+}
+
+.dateborn a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    outline: none;
+    font-family: 'Lora', serif;
+    transition: .5s linear;
+    width: 120px;
+}
+
+.downmenu {
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    width: 120px;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    height: 200px;
+    overflow: scroll;
+}
+
+.dateborn ul {
+    background: #ECDAD6;
+}
+
+.dateborn ul a {
+    color: black;
+    border: 0.5px solid rgba(66, 66, 66, .3);
+}
+
+.dateborn .downmenu {
+    background-color: steelblue;
+}
+
+#daymenu {
+    display: none;
+}
+
+#monthmenu {
+    display: none;
+}
+
+#yearmenu {
+    display: none;
+}
+
+.btnmargin {
+    margin-top: 50px;
 }

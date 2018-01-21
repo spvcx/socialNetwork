@@ -3,12 +3,15 @@ require ('config.php');
 
 if (isset($_POST['maindata'])) {
 	DB::query('UPDATE user_info SET firstname=:firstname, lastname=:lastname,
-     relations=:relations, city=:city, website=:website WHERE user_id=:user_id', array(
+     relations=:relations, city=:city, website=:website, bday=:bday, bmonth=:bmonth, byear=:byear WHERE user_id=:user_id', array(
 		':firstname' => $_POST['firstname'],
 		':lastname' => $_POST['lastname'],
 		':relations' => $_POST['relations'],
 		':city' => $_POST['city'],
 		':website' => $_POST['website'],
+		':bday' => $_POST['bday'],
+		':bmonth' => $_POST['bmonth'],
+		':byear' => $_POST['byear'],
 		':user_id' => $_POST['id']
 	));
 	echo 'success';
