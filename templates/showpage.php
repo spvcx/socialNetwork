@@ -163,7 +163,7 @@
                                     
                         </div>
                               <div class="panel-footer">
-                              Likes: 1
+                                    <span class="glyphicon glyphicon-heart" onclick='addLike()'style="margin-right:10px; cursor:pointer;color:red;"></span>1
                               </div>
                         </div>
                   <?php } ?>

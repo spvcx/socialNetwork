@@ -1,10 +1,10 @@
 <?php if(!$userId) header('location: http://spvcx.com'); ?>
     <?php include "templates/include/header.php" ?>
-    <div class="panel panel-default">
-       <div class="panel-body">
-          <input type="text" class="form-control" placeholder="Что у вас нового?">
-          <button type="button" class="btn btn-default pull-right margin-top">Отправить</button>
-       </div>
+    <div class="panel panel-default margin-top">
+                  <div class="panel-body">
+                  <input id='post_body' type="text" class="form-control" placeholder="Что у вас нового?">
+                        <button type="button" class="btn btn-default pull-right margin-top" onclick="sendPost(<?php echo $userId.",".$userId?>)">Отправить</button>
+                  </div>
     </div>
     <a href="#">
        <div class="thumbnail principal-post">

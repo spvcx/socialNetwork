@@ -14,3 +14,7 @@ function sendPost(id, body_id) {
         });
     }
 }
+
+function addLike() {
+    alert('fkdajfdlsa');
+}

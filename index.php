@@ -32,12 +32,22 @@ case 'editinterests':
 case 'showpage':
 	showpage();
 	break;
+case 'search':
+	search();
+	break;
 
 default:
 	defaultpage();
 	break;
 }
 
+
+function search() {
+	global $userId;
+	$results = array();
+	$results['pageTitle'] = 'Поиск студентов';
+	require(TEMPLATE_PATH."/search.php");
+}
 
 function showpage()
 {

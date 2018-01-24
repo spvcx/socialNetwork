@@ -284,10 +284,26 @@ ul {
     position: relative;
 }
 
+.search-myimg {
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    float: left;
+    position: relative;
+}
+
 .post-img {
     width: 30px;
     height: 30px;
     border-radius: 4px;
+}
+
+.search-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
 }
 
 .panel-names {

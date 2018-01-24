@@ -52,7 +52,7 @@
                   <li><a href="/"> <span class="glyphicon glyphicon-folder-open" style="margin-right:10px;"></span>Новости</a></li>
                   <li><a href="#"> <span class="glyphicon glyphicon-envelope" style="margin-right:10px;"></span>Мои Сообщения <span class="badge badge-info">111</span></a></li>
                   <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right:10px;"></span>Мои друзья </a></li>
-                  <li ><a href="#"> <span class="glyphicon glyphicon-search" style="margin-right:10px;"></span>Поиск</a></li>
+                  <li ><a href="http://spvcx.com/?action=search"> <span class="glyphicon glyphicon-search" style="margin-right:10px;"></span>Поиск</a></li>
                </ul>
             </div>
          </div>
