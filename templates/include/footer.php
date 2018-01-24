@@ -7,4 +7,5 @@
       <script src="js/Account/editData.js"></script>
       <script src="js/Account/avatarEdit.js"></script>
       <script src="js/Account/bdayRelations.js"></script>
+      <script src="js/Account/userPosts.js"></script>
 </html>

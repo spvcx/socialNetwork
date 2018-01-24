@@ -137,5 +137,38 @@
                         <?php endif ?>
                   </div>
             </div>
+            
+            <div class="panel panel-default margin-top">
+                  <div class="panel-body">
+                  <input id='post_body' type="text" class="form-control" placeholder="<?php if($own):?>Что у вас нового?<?php else:?>Напишите пост<?php endif?>">
+                        <button type="button" class="btn btn-default pull-right margin-top" onclick="sendPost(<?php if($own) echo $userPageId; else echo $userId;?>, <?php echo $userPageId?>)">Отправить</button>
+                  </div>
+            </div>
+            
+            <?php if(DB::query('SELECT * FROM user_posts WHERE body_id=:body_id',array(':body_id'=>$userPageId))): ?>
+                  <?php $postsInfo = DB::query('SELECT * FROM user_posts WHERE body_id=:body_id ORDER BY id DESC',array(':body_id'=>$userPageId));?>
+                  <?php foreach($postsInfo as $currentPost) { ?>
+                        <div class="panel panel-default margin-top">
+                              <div class="panel-body">
+                                    <div class="panel-infos clearfix">
+                                    <?php $postedBy = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(
+                                          ':user_id'=>$currentPost['user_id']
+                                    ))[0]; ?>
+                                          <div class="panel-myimg"><img class ="post-img" src="<?php echo 'userimages/'.$postedBy['avatar'] ?>" alt=""></div>
+                                          <div class="panel-names"><?php echo $postedBy['firstname']." ".$postedBy['lastname'];?></div>
+                                    </div>
+                                    <div class="panel-text">
+                                          <p><?php echo $currentPost['body'];?></p>
+                                    </div>
+                                    
+                        </div>
+                              <div class="panel-footer">
+                              Likes: 1
+                              </div>
+                        </div>
+                  <?php } ?>
+            <?php endif ?>
+
+            
       </div>
       <?php include "templates/include/footer.php" ?>

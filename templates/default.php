@@ -2,7 +2,7 @@
     <?php include "templates/include/header.php" ?>
     <div class="panel panel-default">
        <div class="panel-body">
-          <input type="email" class="form-control" placeholder="Что у вас нового?">
+          <input type="text" class="form-control" placeholder="Что у вас нового?">
           <button type="button" class="btn btn-default pull-right margin-top">Отправить</button>
        </div>
     </div>
