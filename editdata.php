@@ -31,4 +31,17 @@ if (isset($_POST['interests'])) {
 	echo 'success';
 }
 
+if(isset($_POST['otdelenie'])) {
+	$otdNumb = $_POST['otdnum'];
+	$groups = DB::query('SELECT id,name FROM student_groups WHERE otdelenie_id=:otd',array(':otd'=>$otdNumb));
+	print_r(json_encode($groups)) ;
+}
+
+if(isset($_POST['setGroup'])) {
+	$user_id = $_POST['id'];
+	$groupId = $_POST['groupid'];
+	DB::query('UPDATE user_info SET groupid=:groupid WHERE user_id=:id',array(':id'=>$user_id,':groupid'=>$groupId));
+	echo 'success';
+}
+
 ?>

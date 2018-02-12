@@ -29,7 +29,7 @@ if (avatarInput.addEventListener('change', function(evt) {
                     processData: false,
                     contentType: false,
                     success: function(data) {
-                        ndata = data.slice(1, data.length);
+                        ndata = data.replace(/\s*/g,'');
                         if (ndata === 'success') location.reload();
                     }
                 });

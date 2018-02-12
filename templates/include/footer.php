@@ -8,4 +8,5 @@
       <script src="js/Account/avatarEdit.js"></script>
       <script src="js/Account/bdayRelations.js"></script>
       <script src="js/Account/userPosts.js"></script>
+      <script src="js/Account/otdelenie.js"></script>
 </html>

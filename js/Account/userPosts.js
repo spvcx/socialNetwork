@@ -8,7 +8,7 @@ function sendPost(id, body_id) {
             type: 'POST',
             data: { userpost: 'posts', user_id: user_id, post_body: postBody, body_id: body_id },
             success: function(data) {
-                ndata = data.slice(1, data.length);
+                ndata = data.replace(/\s*/g,'');
                 if (ndata === 'success') location.reload();
             }
         });

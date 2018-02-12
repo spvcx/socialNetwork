@@ -35,10 +35,29 @@ case 'showpage':
 case 'search':
 	search();
 	break;
-
+case 'messages':
+	messages();
+	break;
+case 'sendmessage':
+	sendmessage();
+	break;
 default:
 	defaultpage();
 	break;
+}
+
+function sendmessage() {
+	global $userId;
+	$results = array();
+	$results['pageTitle'] = 'Мои сообщения';
+	require(TEMPLATE_PATH."/sendmessage.php");
+}
+
+function messages() {
+	global $userId;
+	$results = array();
+	$results['pageTitle'] = 'Мои сообщения';
+	require(TEMPLATE_PATH."/messages.php");
 }
 
 

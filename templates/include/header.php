@@ -50,7 +50,7 @@
                <ul class="nav nav-list">
                   <li><a href="http://spvcx.com/?action=showpage&id=<?php echo $userId?>"> <span class="glyphicon glyphicon-home" style="margin-right:10px;"></span>Моя Страница</a></li>
                   <li><a href="/"> <span class="glyphicon glyphicon-folder-open" style="margin-right:10px;"></span>Новости</a></li>
-                  <li><a href="#"> <span class="glyphicon glyphicon-envelope" style="margin-right:10px;"></span>Мои Сообщения <span class="badge badge-info">111</span></a></li>
+                  <li><a href="http://spvcx.com/?action=messages"> <span class="glyphicon glyphicon-envelope" style="margin-right:10px;"></span>Мои Сообщения <span class="badge badge-info">111</span></a></li>
                   <li><a href="#"><span class="glyphicon glyphicon-user" style="margin-right:10px;"></span>Мои друзья </a></li>
                   <li ><a href="http://spvcx.com/?action=search"> <span class="glyphicon glyphicon-search" style="margin-right:10px;"></span>Поиск</a></li>
                </ul>

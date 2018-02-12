@@ -15,7 +15,7 @@ function pullMainData() {
             url: 'editdata.php',
             data: { maindata: 'main', id: id, firstname: firstName, lastname: lastName, relations: relations, city: city, website: website, bday: bday, bmonth: bmonth, byear: byear }
         }).done(function(data) {
-            ndata = data.slice(1, data.length);
+            ndata = data.replace(/\s*/g,'');
             console.log(ndata);
 
         });
@@ -38,7 +38,7 @@ function pullInterestsData() {
         url: 'editdata.php',
         data: { interests: 'i', id: id, about: about, interests: interests, music: music, tvshow: tvshow, books: books, games: games }
     }).done(function(data) {
-        ndata = data.slice(1, data.length);
+        ndata = data.replace(/\s*/g,'');
         console.log(ndata);
 
     });

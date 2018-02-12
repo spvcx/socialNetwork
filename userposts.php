@@ -1,5 +1,6 @@
 <?php
 require('config.php');
+
 if(isset($_POST['userpost'])) {
       $id = $_POST['user_id'];
       $postBody = $_POST['post_body'];

@@ -1,5 +1,5 @@
 <?php if(!$userId) header('location: http://spvcx.com'); ?>
-      <?php 
+      <?php
          $userPageId = $_GET['id'];
          $userPageInfo = DB::query('SELECT * FROM user_info WHERE user_id=:user_id',array(':user_id'=>$userPageId))[0];
          if(!$userPageInfo) header('Location: http://spvcx.com');
@@ -35,7 +35,7 @@
             </div>
             <?php else: ?>
             <div class="card-block">
-               <a href="/" class="btn btn-primary for-btn">Написать сообщение</a>
+               <a href="http://spvcx.com/?action=sendmessage&id=<?php echo $_GET['id']; ?>" class="btn btn-primary for-btn">Написать сообщение</a>
              </div>
             <?php endif ?>
          </div>
@@ -53,7 +53,7 @@
                                     <div class="info-label-header">День рождения</div>
                                     <div class="info-label"><?php echo $userPageInfo['bday'].' '.$userPageInfo['bmonth'].' '.$userPageInfo['byear'].' г.'; ?></div>
                               </div>
-                        <?php endif ?> 
+                        <?php endif ?>
                               <?php if($userPageInfo['city'] != '') : ?>
                               <div class="row-info">
                                     <div class="info-label-header">Город</div>
@@ -74,24 +74,32 @@
                               <?php endif ?>
                         </div>
                         <?php endif ?>
+                        <?php if($userPageInfo['groupid'] != 0): ?>
+                        <?php
+
+                        $otdId = DB::query('SELECT otdelenie_id FROM student_groups LEFT JOIN user_info ON student_groups.id = user_info.groupid WHERE groupid=:groupid',array(':groupid'=>$userPageInfo['groupid']))[0][0];
+                        $otdelenieName = DB::query('SELECT name FROM otdelenie WHERE id=:id',array(':id'=>$otdId))[0][0];
+                        $groupName = DB::query('SELECT name FROM student_groups WHERE id=:id',array(':id'=>$userPageInfo['groupid']))[0][0]
+                        ?>
                         <div class="info-block clear_fix">
                               <div class="info-header">
                                     <span class="label-info-header">ЯГК</span>
                               </div>
                               <div class="row-info">
                                     <div class="info-label-header">Отделение</div>
-                                    <div class="info-label">ОИТУП</div>
+                                    <div class="info-label"><?php echo $otdelenieName; ?></div>
                               </div>
                               <div class="row-info">
                                     <div class="info-label-header">Группа</div>
-                                    <div class="info-label">ИС1-41</div>
+                                    <div class="info-label"><?php echo $groupName; ?></div>
                               </div>
                         </div>
-                        <?php if($userPageInfo['about'] != '' 
-                        or $userPageInfo['interests'] != '' 
-                        or $userPageInfo['music'] != '' 
-                        or $userPageInfo['tvshow'] != '' 
-                        or $userPageInfo['books'] != '' 
+                        <?php endif ?>
+                        <?php if($userPageInfo['about'] != ''
+                        or $userPageInfo['interests'] != ''
+                        or $userPageInfo['music'] != ''
+                        or $userPageInfo['tvshow'] != ''
+                        or $userPageInfo['books'] != ''
                         or $userPageInfo['games'] != '' ) :?>
                         <div class="info-block clear_fix">
                               <div class="info-header">
@@ -137,14 +145,14 @@
                         <?php endif ?>
                   </div>
             </div>
-            
+
             <div class="panel panel-default margin-top">
                   <div class="panel-body">
                   <input id='post_body' type="text" class="form-control" placeholder="<?php if($own):?>Что у вас нового?<?php else:?>Напишите пост<?php endif?>">
                         <button type="button" class="btn btn-default pull-right margin-top" onclick="sendPost(<?php if($own) echo $userPageId; else echo $userId;?>, <?php echo $userPageId?>)">Отправить</button>
                   </div>
             </div>
-            
+
             <?php if(DB::query('SELECT * FROM user_posts WHERE body_id=:body_id',array(':body_id'=>$userPageId))): ?>
                   <?php $postsInfo = DB::query('SELECT * FROM user_posts WHERE body_id=:body_id ORDER BY id DESC',array(':body_id'=>$userPageId));?>
                   <?php foreach($postsInfo as $currentPost) { ?>
@@ -160,7 +168,7 @@
                                     <div class="panel-text">
                                           <p><?php echo $currentPost['body'];?></p>
                                     </div>
-                                    
+
                         </div>
                               <div class="panel-footer">
                                     <span class="glyphicon glyphicon-heart" onclick='addLike()'style="margin-right:10px; cursor:pointer;color:red;"></span>1
@@ -169,6 +177,6 @@
                   <?php } ?>
             <?php endif ?>
 
-            
+
       </div>
       <?php include "templates/include/footer.php" ?>

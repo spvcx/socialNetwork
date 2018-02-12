@@ -66,7 +66,7 @@ class User
 		$userId = DB::query('SELECT id FROM user WHERE email=:email', array(
 			':email' => $this->email
 		)) [0]['id'];
-		DB::query('INSERT INTO user_info VALUES (\'\',:user_id,:firstname,:lastname,:gender,:relations,:city,:about,:interests,:music,:tvshow,:books,:games,:avatar,:website,:bday,:bmonth,:byear)',array(
+		DB::query('INSERT INTO user_info VALUES (\'\',:user_id,:firstname,:lastname,:gender,:relations,:city,:about,:interests,:music,:tvshow,:books,:games,:avatar,:website,:bday,:bmonth,:byear,:groupid)',array(
 			':user_id' => $userId,
 			':firstname' => $this->firstname,
 			':lastname' => $this->lastname,
@@ -83,9 +83,10 @@ class User
 			':website' => '',
 			':bday' => '',
 			':bmonth' => '',
-			':byear' => ''
+			':byear' => '',
+			':groupid' => ''
 		));
-		
+
 	}
 
 	public

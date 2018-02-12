@@ -10,12 +10,21 @@ function openYearMenu() {
     $("#yearmenu").css('display', 'block');
 }
 
+function openGroup() {
+    $("#groupstud").css('display', 'block');
+}
+
+function openOtdelenie() {
+    $("#otdeleniestud").css('display', 'block');
+}
 $(document).mouseup(function(e) {
     var monthmenu = $("#monthmenu");
     var daymenu = $("#daymenu");
     var yearmenu = $("#yearmenu");
+    var otdelenie = $("#otdeleniestud");
+    var studgroup = $("#groupstud");
     var dateInputs = [];
-    dateInputs.push(monthmenu, yearmenu, daymenu);
+    dateInputs.push(monthmenu, yearmenu, daymenu,studgroup,otdelenie);
     dateInputs.forEach((container) => {
         if (container.has(e.target).length === 0) {
             container.hide();

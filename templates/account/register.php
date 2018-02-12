@@ -13,7 +13,7 @@
                   <h1 class="mb-4">Регистрация</h1>
                   <form role="form" method="post" onsubmit="return false" class="form-horizontal">
                      <!-- Блок для ввода email -->
-                     <div class="form-group has-feedback ">
+                     <div class="form-group has-feedback">
                         <label for="email" class="control-label col-xs-3">Email:</label>
                         <div class="col-xs-6">
                            <div class="input-group">
@@ -21,6 +21,7 @@
                               <input type="email" id="emaill" onchange="emailChangeCheck()" class="form-control" placeholder="youremail@gmail.com" required="required" name="email" >
                            </div>
                            <span class="glyphicon form-control-feedback"></span>
+
                         </div>
                      </div>
                      <!-- Блок для ввода password -->
